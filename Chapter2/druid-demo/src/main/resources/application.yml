@@ -1,0 +1,33 @@
+spring:
+  h2:
+    console:
+      path: /h2-console   # h2 web consloe 路径
+      enabled: true       # 开启 h2 web consloe，默认为 false
+      settings:
+        web-allow-others: true    #允许远程访问 h2 web consloe
+
+  output:
+    ansi:
+      enabled: always
+
+  datasource:
+    url: jdbc:h2:mem:foo
+    username: sa
+
+    druid:
+      connection-properties: config.decrypt=false;config.decrypt.key=${public-key}
+      filter:
+        config:
+          enabled: true
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 100
+      filters: conn,config,slf4j
+      initial-size: 5
+      max-active: 5
+      min-idle: 5
+      test-on-borrow: true
+      test-on-return: true
+      test-while-idle: true
+      validation-query: SELECT 1 FROM DUAL
+
