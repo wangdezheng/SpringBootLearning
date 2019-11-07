@@ -6,6 +6,16 @@ spring:
       settings:
         web-allow-others: true    #允许远程访问 h2 web consloe
 
+  datasource:
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      minimum-idle: 1
+      maximum-pool-size: 5
+      pool-name: bosPoolName
+      connection-timeout: 30000
+      max-lifetime: 1800000
+      idle-timeout: 600000
+
 management:
   endpoints:
     web:
