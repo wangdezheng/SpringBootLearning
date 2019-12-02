@@ -2,14 +2,11 @@ package io.transwarp.dezheng.cacheredisdemo.model;
 
 
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Type;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.joda.money.Money;import org.springframework.stereotype.Repository;
+import org.joda.money.Money;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 @Table(name = "T_COFFEE")
